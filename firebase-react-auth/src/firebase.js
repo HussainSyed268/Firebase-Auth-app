@@ -1,25 +1,12 @@
 // Import the functions you need from the SDKs you need
-
 import { initializeApp } from "firebase/app";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyArjPt-qusi8QDsGCkNioAVqcxKo3hFAQY",
-
-  authDomain: "react-firebase-auth-408c4.firebaseapp.com",
-
-  projectId: "react-firebase-auth-408c4",
-
-  storageBucket: "react-firebase-auth-408c4.appspot.com",
-
-  messagingSenderId: "923276814434",
-
-  appId: "1:923276814434:web:93eac1a330d4bf4989893b",
-
-  measurementId: "G-TBK0FYMYKT",
-};
-
-// Initialize Firebase
+import { getAuth } from "firebase/auth";
+// import from env.local
+import firebaseConfig1 from "./env.local";
+const firebaseConfig = firebaseConfig1;
 
 const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+const auth = getAuth();
+
+export { app, auth };

@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
+        console.log(user);
         setUsername(user.displayName);
         console.log(user.displayName + " is logged in");
       } else {
@@ -24,7 +25,7 @@ function App() {
     <div className="App h-full">
       <Router>
         <Routes>
-          <Route path="/" element={<Home name={username} />} />
+          <Route path="/" element={<Home user={username} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

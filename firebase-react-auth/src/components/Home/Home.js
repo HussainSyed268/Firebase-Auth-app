@@ -9,7 +9,7 @@ const Home = (props) => {
       <br />
       <Link to="/signup">Signup</Link>
       <h1 className="text-black">
-        {props.user ? `Welcome ${props.user}` : ""}
+        {props.user ? `Welcome ${props.user}` : "Welcome"}
       </h1>
     </div>
   );

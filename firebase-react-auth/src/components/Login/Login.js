@@ -48,7 +48,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="flex h-full bg-gradient-to-bl from-[#048c98] to-[#3adb74] items-center justify-center">
+    <div className="flex h-full bg-gradient-to-bl from-[#30b5a0] to-[#8ddbad] items-center justify-center">
       <div className="shadow-lg flex flex-col h-5/6 w-2/6 rounded-lg bg-white">
         <h1 className="text-4xl h-1/6 justify-end pt-24 font-normal text-[#048c98]">
           Login
@@ -84,7 +84,7 @@ const Login = () => {
           <h1 className="text-red-500 mt-2">{errorMessage}</h1>
           <h1 className="text-green-500 mt-2">{successMessage}</h1>
           <button
-            className="w-1/6 h-14 mt-8 text-center rounded-md bg-[#1a907a] disabled:opacity-75 text-white"
+            className="w-1/6 h-14 mt-8 text-center rounded-md bg-[#1a7d7e] disabled:opacity-75 text-white"
             type="submit"
             onClick={handleSubmit}
             disabled={submitButtonDisabled}

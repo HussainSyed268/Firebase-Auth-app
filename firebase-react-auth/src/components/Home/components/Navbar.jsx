@@ -39,7 +39,7 @@ const Navbar = (props) => {
                     <img src={logo} width={55} height={50} alt='logo' />
                     <h1 className='text-3xl mx-2 py-3 font-sans'>Pluto</h1>
                 </div>
-                <div className='flex '>
+                <div className='flex hidden sm:flex'>
                     <div className='flex my-2'>
                         <button ><img src={notif} width={25} height={25} alt='notification' /></button>
                         <div className=' relative h-4 w-4 rounded-full bg-orange-500 right-2 bottom-2 text-sm'>2</div>
@@ -53,7 +53,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="flex  bg-[#fe571f] justify-center items-center h-full px-4 sm:hidden lg:flex">
+            <div className="flex  bg-[#fe571f] justify-center items-center h-full px-4 hidden lg:flex">
                 <button className='flex' onClick={toggleDropdown}>
                     <div className="h-10 w-16 bg-cover bg-center bg-man rounded-full">
                     </div>

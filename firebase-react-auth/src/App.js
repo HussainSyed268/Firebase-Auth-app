@@ -8,11 +8,12 @@ import Signup from "../src/components/Signup/Signup.js";
 
 function App() {
   const [username, setUsername] = useState("");
+  const [usemail, setEmail] = useState("");
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        console.log(user);
         setUsername(user.displayName);
+        setEmail(user.email);
         console.log(user.displayName + " is logged in");
       } else {
         setUsername("");
@@ -25,7 +26,7 @@ function App() {
     <div className="App h-full">
       <Router>
         <Routes>
-          <Route path="/" element={<Home user={username} />} />
+          <Route path="/" element={<Home user={username} email={usemail} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

@@ -58,7 +58,7 @@ const Signup = () => {
   };
   return (
     <div className="flex h-full bg-gradient-to-bl from-[#30b5a0] to-[#8ddbad] items-center justify-center">
-      <div className="shadow-lg flex flex-col h-5/6 w-2/6 rounded-lg bg-white">
+      <div className="shadow-lg flex flex-col h-5/6 w-[25rem] sm:w-[25rem] md:w-[30rem] lg:w-[40rem] rounded-lg bg-white">
         <h1 className="text-4xl h-1/6 justify-end pt-24 font-normal text-[#048c98]">
           Signup
         </h1>
@@ -100,7 +100,7 @@ const Signup = () => {
           <h1 className="text-red-500 mt-2">{errorMessage}</h1>
           <h1 className="text-green-500 mt-2">{successMessage}</h1>
           <button
-            className="w-1/6 h-14 mt-4 text-center rounded-md bg-[#1a7d7e] disabled:opacity-75 text-white"
+            className="w-[5rem] md:w-[7rem] text-sm md:text-base h-14 mt-4 text-center rounded-md bg-[#1a7d7e] disabled:opacity-75 text-white"
             type="submit"
             onClick={handleSubmit}
             disabled={submitButtonDisabled}

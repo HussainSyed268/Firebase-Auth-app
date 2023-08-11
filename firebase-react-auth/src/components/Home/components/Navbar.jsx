@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import menu from '../../../assets/menu.png';
 import arrow from '../../../assets/arrow.png';
@@ -7,15 +7,21 @@ import envelope from '../../../assets/envelope.png';
 import help from '../../../assets/help.png';
 import notif from '../../../assets/notif.png';
 import logo from '../../../assets/logo.png';
-
+import { auth } from '../../../firebase';
 
 const Navbar = (props) => {
+
+    const navigate = useNavigate();
 
     const toggleSidebar = () => {
         props.setSidebar(!props.sidebar);
         console.log(props.sidebar);
     };
 
+    const Signout = () => {
+        auth.signOut();
+        navigate("/login");
+    };
 
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -25,8 +31,8 @@ const Navbar = (props) => {
 
     return (
         <div className="flex justify-around items-center h-20 bg-[#15283c] text-white relative shadow-sm font-mono">
-            <div className="flex bg-[#fe571f] justify-center items-center h-full px-8">
-                <button><img src={menu} width={50} height={50} alt='menu' onClick={toggleSidebar} /></button>
+            <div className="flex bg-[#fe571f] justify-center items-center h-full px-8 cursor-pointer" onClick={toggleSidebar}>
+                <button><img src={menu} width={50} height={50} alt='menu' /></button>
             </div>
             <div className='flex mx-4 justify-between items-center w-full h-16 bg-[#15283c] text-white relative shadow-sm font-mono'>
                 <div className='flex'>
@@ -55,11 +61,11 @@ const Navbar = (props) => {
 
                     <img className='h-6 w-6 my-2' src={arrow} width={32} height={32} alt='drop' />
                     {isDropdownOpen && (
-                        <div className="flex flex-col items-start absolute mt-16 py-1 w-36 mr-10 text-black bg-white text-sm shadow-lg">
-                            <div className="px-4 py-2 hover:bg-slate-200 duration-200">My Profile</div>
-                            <div className="px-4 py-2 hover:bg-slate-200 duration-200">Settings</div>
-                            <div className="px-4 py-2 hover:bg-slate-200 duration-200">Help</div>
-                            <div className="px-4 py-2 hover:bg-slate-200 duration-200">Logout</div>
+                        <div className="flex flex-col absolute mt-16 py-1 w-36 mr-10 text-black bg-white text-sm shadow-lg">
+                            <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">My Profile</div>
+                            <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">Help</div>
+                            <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">Settings</div>
+                            <div className=" pl-4 py-2 font-semibold text-start hover:bg-slate-200 duration-200 w-full" onClick={Signout}>Logout</div>
                         </div>
                     )}
                 </button>

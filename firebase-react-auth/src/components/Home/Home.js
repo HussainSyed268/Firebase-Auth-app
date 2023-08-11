@@ -1,17 +1,21 @@
 //Create a simple page saying Home use tailwind to style it
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import Navbar from "./components/Navbar.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Sidebar from "./components/Sidebar.jsx";
 const Home = (props) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const openSidebar = () => {
-    setSidebarOpen(true);
-  };
 
+  useEffect(() => {
+    if (sidebarOpen) {
+      // document.body.classList.add("overflow-hidden");
+    } else {
+      // document.body.classList.remove("overflow-hidden");
+    }
+  }, [sidebarOpen]);
   return (
     <div className="flex h-full">
-      <Sidebar name={props.user} email={props.email} />
+      <Sidebar name={props.user} email={props.email} sidebar={sidebarOpen} />
       <div>
         <Navbar
           name={props.user}

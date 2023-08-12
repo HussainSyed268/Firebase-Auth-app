@@ -7,7 +7,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const Signup = () => {
+const Signup = (props) => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
     username: "",
@@ -38,7 +38,7 @@ const Signup = () => {
           await updateProfile(user, {
             displayName: username,
           });
-          console.log(user.displayName);
+          props.setUsername(username);
           await delay(1000);
           navigate("/");
         })

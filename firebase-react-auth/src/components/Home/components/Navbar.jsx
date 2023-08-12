@@ -15,7 +15,6 @@ const Navbar = (props) => {
 
     const toggleSidebar = () => {
         props.setSidebar(!props.sidebar);
-        console.log(props.sidebar);
     };
 
     const Signout = () => {
@@ -39,7 +38,7 @@ const Navbar = (props) => {
                     <img src={logo} width={55} height={50} alt='logo' />
                     <h1 className='text-3xl mx-2 py-3 font-sans'>Pluto</h1>
                 </div>
-                <div className='flex hidden sm:flex'>
+                <div className='hidden sm:flex'>
                     <div className='flex my-2'>
                         <button ><img src={notif} width={25} height={25} alt='notification' /></button>
                         <div className=' relative h-4 w-4 rounded-full bg-orange-500 right-2 bottom-2 text-sm'>2</div>
@@ -53,15 +52,15 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="flex  bg-[#fe571f] justify-center items-center h-full px-4 hidden lg:flex">
+            <div className="bg-[#fe571f] justify-center items-center h-full px-4 hidden lg:flex">
                 <button className='flex' onClick={toggleDropdown}>
-                    <div className="h-10 w-16 bg-cover bg-center bg-man rounded-full">
+                    <div className="w-[5rem] h-14 bg-cover bg-center bg-man rounded-full">
                     </div>
-                    <div className='px-2 text-sm text-white py-3'>{props.name}</div>
+                    <div className='mx-2 min-w-fit w-fit text-sm text-white py-4'>{props.name}</div>
 
-                    <img className='h-6 w-6 my-2' src={arrow} width={32} height={32} alt='drop' />
+                    <img className='h-6 w-8 my-3' src={arrow} width={32} height={32} alt='drop' />
                     {isDropdownOpen && (
-                        <div className="flex flex-col absolute mt-16 py-1 w-36 mr-10 text-black bg-white text-sm shadow-lg">
+                        <div className="flex flex-col absolute mt-16 py-1 mr-10 w-full text-black bg-white text-sm shadow-lg">
                             <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">My Profile</div>
                             <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">Help</div>
                             <div className=" pl-4 py-2 text-start hover:bg-slate-200 duration-200 w-full">Settings</div>

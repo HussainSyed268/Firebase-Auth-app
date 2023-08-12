@@ -14,10 +14,8 @@ function App() {
       if (user) {
         setUsername(user.displayName);
         setEmail(user.email);
-        console.log(user.displayName + " is logged in");
       } else {
         setUsername("");
-        console.log("user is logged out");
       }
     });
   }, []);
@@ -28,7 +26,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={username} email={usemail} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/signup"
+            element={<Signup user={username} setUsername={setUsername} />}
+          />
         </Routes>
       </Router>
     </div>

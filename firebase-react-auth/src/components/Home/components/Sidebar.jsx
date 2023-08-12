@@ -9,23 +9,13 @@ import apps from "../../../assets/application.png";
 import briefcase from "../../../assets/briefcase.png";
 import paperplane from "../../../assets/paper-plane.png";
 const Sidebar = (props) => {
-    // const [sidebar, setSidebar] = useState(false);
-    // useEffect(() => {
-    //     if (props.sidebar === true) {
-    //         setSidebar(true);
-    //         console.log("I am in the sidebar and I am true");
-    //     }
-    //     else {
-    //         setSidebar(false);
-    //     };
-    // }, [props.sidebar]);
     return (
         <>
             {props.sidebar && (
                 <div className="flex flex-col bg-[#ffffff] rounded-lg shadow-md w-3/6">
                     <div className="flex justify-start h-1/6 items-center bg-[#214265]">
-                        <div className="ml-8 h-24 w-24 bg-cover bg-center bg-man rounded-full"></div>
-                        <div className="flex flex-col justify-center items-start mx-4">
+                        <div className="ml-8 h-24 w-24 bg-cover bg-center bg-man rounded-full invisible sm:flex sm:visible"></div>
+                        <div className="flex flex-col justify-center items-start  mr-10 sm:mx-4">
                             <h1 className="text-white font-normal text-2xl mt-3">{props.name}</h1>
                             <h1 className="text-white font-normal text-md mb-2">{props.email}</h1>
                             <div className="flex items-center">
